@@ -16,10 +16,11 @@ namespace BT.Composites
             {
                 ch.Tick(blackboard);
             }
-            throw new NotImplementedException();
+
+            return DefaultResult;
         }
 
         protected abstract bool ShouldReturnStatus(Status status);
-        protected abstract Status DefaultStatus { get; }
+        protected abstract Status DefaultResult { get; }
     }
 }
