@@ -1,14 +1,14 @@
-﻿using BehaviourTree.Types;
-
-namespace BehaviourTree.Leafs
+﻿namespace BT.Leafs
 {
-    public class Action : Leaf<ActionDelegate>
-    {
-        public Action(ActionDelegate action) : base(action) { }
+    public delegate Status ActionDelegate<T>(T blackboard);
 
-        public override Status Tick()
+    public class Action<T> : Leaf<T, ActionDelegate<T>>
+    {
+        public Action(ActionDelegate<T> action) : base(action) { }
+
+        public override Status Tick(T blackboard)
         {
-            return action_();
+            return action_(blackboard);
         }
     }
 }

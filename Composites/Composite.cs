@@ -1,18 +1,25 @@
 ﻿using System;
-using BehaviourTree.Types;
 
-namespace BehaviourTree.Composites
+namespace BT.Composites
 {
-    public abstract class Composite : INode
+    public abstract class Composite<T> : Node<T>
     {
-        public Composite(INode[] children)
+        protected readonly Node<T>[] children_;
+        public Composite(Node<T>[] children)
         {
-
+            children_ = children;
         }
 
-        public Status Tick()
+        public override Status Tick(T blackboard)
         {
+            foreach(var ch in children_)
+            {
+                ch.Tick(blackboard);
+            }
             throw new NotImplementedException();
         }
+
+        protected abstract bool ShouldReturnStatus(Status status);
+        protected abstract Status DefaultStatus { get; }
     }
 }

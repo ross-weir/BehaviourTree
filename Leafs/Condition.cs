@@ -1,14 +1,15 @@
-﻿using BehaviourTree.Types;
-
-namespace BehaviourTree.Leafs
+﻿
+namespace BT.Leafs
 {
-    public class Condition : Leaf<ConditionDelegate>
-    {
-        public Condition(ConditionDelegate action) : base(action) { }
+    public delegate bool ConditionDelegate<T>(T blackboard);
 
-        public override Status Tick()
+    public class Condition<T> : Leaf<T, ConditionDelegate<T>>
+    {
+        public Condition(ConditionDelegate<T> action) : base(action) { }
+
+        public override Status Tick(T blackboard)
         {
-            if (action_())
+            if (action_(blackboard))
             {
                 return Status.Success;
             }

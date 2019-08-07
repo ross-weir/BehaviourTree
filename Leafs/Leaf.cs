@@ -1,19 +1,12 @@
-﻿using BehaviourTree.Types;
-
-namespace BehaviourTree.Leafs
+﻿namespace BT.Leafs
 {
-    public delegate Status ActionDelegate();
-    public delegate bool ConditionDelegate();
-
-    public abstract class Leaf<T> : INode
+    public abstract class Leaf<T, A> : Node<T>
     {
-        protected readonly T action_;
+        protected readonly A action_;
 
-        public Leaf(T action)
+        public Leaf(A action)
         {
             action_ = action;
         }
-
-        public abstract Status Tick();
     }
 }
