@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Leafs\ActionNode.cs" />
     <Compile Include="Leafs\ConditionNode.cs" />
-    <Compile Include="NodeList.cs" />
     <Compile Include="NodeTest.cs" />
   </ItemGroup>
   <ItemGroup>

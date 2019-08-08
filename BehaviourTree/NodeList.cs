@@ -28,11 +28,6 @@ namespace BT
             return GetEnumerator();
         }
 
-        public void Reset()
-        {
-            enumerator_.Reset();
-        }
-
         private class NodeEnumerator : IEnumerator<Node<T>>
         {
             private readonly Node<T>[] nodes_;
