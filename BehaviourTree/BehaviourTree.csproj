@@ -44,11 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Behaviour.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Composites\Composite.cs" />
-    <Compile Include="Leafs\Action.cs" />
-    <Compile Include="Leafs\Condition.cs" />
-    <Compile Include="Leafs\Leaf.cs" />
+    <Compile Include="Leafs\ActionNode.cs" />
+    <Compile Include="Leafs\ConditionNode.cs" />
+    <Compile Include="Leafs\LeafNode.cs" />
+    <Compile Include="NodeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

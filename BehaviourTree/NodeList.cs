@@ -4,18 +4,23 @@ using System.Collections.Generic;
 
 namespace BT
 {
-    internal class NodeList<T> : IEnumerable<T>
+    public class NodeList<T> : IEnumerable<Node<T>>
     {
-        private readonly T[] nodes_;
+        private readonly NodeEnumerator enumerator_;
 
-        public NodeList(T[] nodes)
+        public NodeList(Node<T>[] nodes)
         {
-            nodes_ = nodes;
+            enumerator_ = new NodeEnumerator(nodes);
         }
 
-        public IEnumerator<T> GetEnumerator()
+        public IEnumerator<Node<T>> GetEnumerator()
         {
-            return new NodeEnumerator(nodes_);
+            while(enumerator_.MoveNext())
+            {
+                yield return enumerator_.Current;
+            }
+
+            enumerator_.Reset();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -23,17 +28,22 @@ namespace BT
             return GetEnumerator();
         }
 
-        private class NodeEnumerator : IEnumerator<T>
+        public void Reset()
         {
-            private readonly T[] nodes_;
+            enumerator_.Reset();
+        }
+
+        private class NodeEnumerator : IEnumerator<Node<T>>
+        {
+            private readonly Node<T>[] nodes_;
             private int index_ = -1;
 
-            public NodeEnumerator(T[] nodes)
+            public NodeEnumerator(Node<T>[] nodes)
             {
                 nodes_ = nodes;
             }
 
-            public T Current => nodes_[index_];
+            public Node<T> Current => nodes_[index_];
 
             object IEnumerator.Current => Current;
 

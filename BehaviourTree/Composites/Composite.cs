@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace BT.Composites
+﻿namespace BT.Composites
 {
     public abstract class Composite<T> : Node<T>
     {
-        private readonly NodeList<Node<T>> children_;
+        private readonly NodeList<T> children_;
 
         public Composite(params Node<T>[] children)
         {
-            children_ = new NodeList<Node<T>>(children);
+            children_ = new NodeList<T>(children);
         }
 
-        public override Status Tick(T blackboard)
+        public override NodeStatus Tick(T blackboard)
         {
             foreach(var child in children_)
             {
@@ -28,7 +24,7 @@ namespace BT.Composites
             return DefaultResult;
         }
 
-        protected abstract Status DefaultResult { get; }
-        protected abstract bool ShouldReturnStatus(Status status);
+        protected abstract NodeStatus DefaultResult { get; }
+        protected abstract bool ShouldReturnStatus(NodeStatus status);
     }
 }
