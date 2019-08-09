@@ -44,16 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composites\SelectorNode.cs" />
+    <Compile Include="Composites\SequenceNode.cs" />
+    <Compile Include="Decorators\DecoratorNode.cs" />
+    <Compile Include="Decorators\InverterNode.cs" />
     <Compile Include="Node.cs" />
-    <Compile Include="Composites\Composite.cs" />
+    <Compile Include="Composites\CompositeNode.cs" />
     <Compile Include="Leafs\ActionNode.cs" />
     <Compile Include="Leafs\ConditionNode.cs" />
     <Compile Include="Leafs\LeafNode.cs" />
     <Compile Include="NodeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Decorators\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

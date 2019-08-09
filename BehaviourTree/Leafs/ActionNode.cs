@@ -4,6 +4,8 @@
 
     public class ActionNode<T> : LeafNode<T, ActionDelegate<T>>
     {
+        public ActionNode() { }
+
         public ActionNode(ActionDelegate<T> action) : base(action) { }
 
         public override NodeStatus Tick(T blackboard)

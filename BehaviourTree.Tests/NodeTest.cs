@@ -25,7 +25,7 @@ namespace BT.Tests
                 })
             };
         }
-        
+      
         protected virtual T GetBlackboard()
         {
             return new T();

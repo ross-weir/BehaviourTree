@@ -4,6 +4,8 @@
     {
         protected readonly A action_;
 
+        public LeafNode() { }
+
         public LeafNode(A action)
         {
             action_ = action;

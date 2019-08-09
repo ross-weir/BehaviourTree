@@ -9,6 +9,7 @@
 
     public abstract class Node<T>
     {
+        public Node() { }
         public abstract NodeStatus Tick(T blackboard);
     }
 }

@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace BT.Tests.Leafs
 {
     [TestFixture]
-    class ActionNode : NodeTest<TestBlackboard>
+    class ActionNodeTest : NodeTest<TestBlackboard>
     {
         [TestCase(NodeStatus.Failure)]
         [TestCase(NodeStatus.Running)]

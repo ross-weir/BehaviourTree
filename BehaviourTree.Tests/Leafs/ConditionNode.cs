@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace BT.Tests.Leafs
 {
     [TestFixture]
-    class ConditionNode : NodeTest<TestBlackboard>
+    class ConditionNodeTest : NodeTest<TestBlackboard>
     {
         [Test]
         public void Tick_Returns_Success_If_Delegate_True()

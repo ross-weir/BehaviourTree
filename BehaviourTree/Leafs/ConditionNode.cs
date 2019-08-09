@@ -4,6 +4,8 @@
 
     public class ConditionNode<T> : LeafNode<T, ConditionDelegate<T>>
     {
+        public ConditionNode() { }
+
         public ConditionNode(ConditionDelegate<T> action) : base(action) { }
 
         public override NodeStatus Tick(T blackboard)
