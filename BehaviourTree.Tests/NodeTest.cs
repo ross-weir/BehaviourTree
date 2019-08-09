@@ -1,11 +1,13 @@
-﻿using BT.Leafs;
+﻿// <copyright file="NodeTest.cs" company="Ross Weir">
+// Copyright (c) Ross Weir. All rights reserved.
+// </copyright>
 
 namespace BT.Tests
 {
-    public class TestBlackboard
-    { }
+    using BT.Leafs;
 
-    public class NodeTest<T> where T : TestBlackboard, new()
+    public class NodeTest<T>
+        where T : TestBlackboard, new()
     {
         protected virtual Node<T>[] GetNodes()
         {
@@ -22,10 +24,10 @@ namespace BT.Tests
                 new ActionNode<T>((T bb) =>
                 {
                     return NodeStatus.Success;
-                })
+                }),
             };
         }
-      
+
         protected virtual T GetBlackboard()
         {
             return new T();

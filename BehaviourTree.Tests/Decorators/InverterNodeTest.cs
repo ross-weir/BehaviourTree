@@ -1,17 +1,21 @@
-﻿using BT.Decorators;
-using BT.Leafs;
-using Moq;
-using NUnit.Framework;
+﻿// <copyright file="InverterNodeTest.cs" company="Ross Weir">
+// Copyright (c) Ross Weir. All rights reserved.
+// </copyright>
 
-namespace BT.Tests.Leafs
+namespace BT.Tests.Decorators
 {
+    using BT.Decorators;
+    using BT.Leafs;
+    using Moq;
+    using NUnit.Framework;
+
     [TestFixture]
-    class InverterNodeTest : NodeTest<TestBlackboard>
+    public class InverterNodeTest : NodeTest<TestBlackboard>
     {
         [Test]
         public void Tick_ChildSuccess_ReturnsFailure()
         {
-            var blackboard = GetBlackboard();
+            var blackboard = this.GetBlackboard();
             var childStub = new Mock<ActionNode<TestBlackboard>>();
             var inverterNode = new InverterNode<TestBlackboard>(childStub.Object);
 
@@ -23,7 +27,7 @@ namespace BT.Tests.Leafs
         [Test]
         public void Tick_ChildFailure_ReturnsSuccess()
         {
-            var blackboard = GetBlackboard();
+            var blackboard = this.GetBlackboard();
             var childStub = new Mock<ActionNode<TestBlackboard>>();
             var inverterNode = new InverterNode<TestBlackboard>(childStub.Object);
 

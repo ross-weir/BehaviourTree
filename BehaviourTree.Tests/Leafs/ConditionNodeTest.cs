@@ -1,15 +1,19 @@
-﻿using BT.Leafs;
-using NUnit.Framework;
+﻿// <copyright file="ConditionNodeTest.cs" company="Ross Weir">
+// Copyright (c) Ross Weir. All rights reserved.
+// </copyright>
 
 namespace BT.Tests.Leafs
 {
+    using BT.Leafs;
+    using NUnit.Framework;
+
     [TestFixture]
-    class ConditionNodeTest : NodeTest<TestBlackboard>
+    public class ConditionNodeTest : NodeTest<TestBlackboard>
     {
         [Test]
         public void Tick_Returns_Success_If_Delegate_True()
         {
-            var blackboard = GetBlackboard();
+            var blackboard = this.GetBlackboard();
             var result = new ConditionNode<TestBlackboard>((TestBlackboard bb) =>
             {
                 return true;
@@ -21,7 +25,7 @@ namespace BT.Tests.Leafs
         [Test]
         public void Tick_Returns_Failure_If_Delegate_False()
         {
-            var blackboard = GetBlackboard();
+            var blackboard = this.GetBlackboard();
             var result = new ConditionNode<TestBlackboard>((TestBlackboard bb) =>
             {
                 return false;

@@ -54,21 +54,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Composites\SelectorNode.cs" />
-    <Compile Include="Composites\SequenceNode.cs" />
-    <Compile Include="Decorators\InverterNode.cs" />
-    <Compile Include="Leafs\ActionNode.cs" />
-    <Compile Include="Leafs\ConditionNode.cs" />
+    <Compile Include="Composites\SelectorNodeTest.cs" />
+    <Compile Include="Composites\SequenceNodeTest.cs" />
+    <Compile Include="Decorators\InverterNodeTest.cs" />
+    <Compile Include="Leafs\ActionNodeTest.cs" />
+    <Compile Include="Leafs\ConditionNodeTest.cs" />
     <Compile Include="NodeTest.cs" />
+    <Compile Include="TestBlackboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BehaviourTree\BehaviourTree.csproj">
       <Project>{79517809-12cc-40cc-974d-942fea634324}</Project>
       <Name>BehaviourTree</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
