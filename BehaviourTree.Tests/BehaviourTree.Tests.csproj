@@ -57,6 +57,8 @@
     <Compile Include="Composites\SelectorNodeTest.cs" />
     <Compile Include="Composites\SequenceNodeTest.cs" />
     <Compile Include="Decorators\InverterNodeTest.cs" />
+    <Compile Include="Decorators\RepeaterNodeTest.cs" />
+    <Compile Include="Decorators\SucceederNodeTest.cs" />
     <Compile Include="Leafs\ActionNodeTest.cs" />
     <Compile Include="Leafs\ConditionNodeTest.cs" />
     <Compile Include="NodeTest.cs" />

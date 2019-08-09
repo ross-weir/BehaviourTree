@@ -49,6 +49,8 @@
     <Compile Include="Composites\SequenceNode.cs" />
     <Compile Include="Decorators\DecoratorNode.cs" />
     <Compile Include="Decorators\InverterNode.cs" />
+    <Compile Include="Decorators\RepeaterNode.cs" />
+    <Compile Include="Decorators\SucceederNode.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Composites\CompositeNode.cs" />
     <Compile Include="Leafs\ActionNode.cs" />
