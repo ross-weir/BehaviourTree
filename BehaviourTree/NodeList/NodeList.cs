@@ -2,7 +2,7 @@
 // Copyright (c) Ross Weir. All rights reserved.
 // </copyright>
 
-namespace BT
+namespace BT.NodeList
 {
     using System;
     using System.Collections;
@@ -12,7 +12,7 @@ namespace BT
     /// A collection of nodes.
     /// </summary>
     /// <typeparam name="T">The generic blackboard.</typeparam>
-    public class NodeList<T> : IEnumerable<Node<T>>
+    public class NodeList<T> : INodeList<T>
     {
         private readonly NodeEnumerator enumerator;
 
@@ -20,13 +20,13 @@ namespace BT
         /// Initializes a new instance of the <see cref="NodeList{T}"/> class.
         /// </summary>
         /// <param name="nodes">Array of nodes.</param>
-        public NodeList(Node<T>[] nodes)
+        public NodeList(INode<T>[] nodes)
         {
             this.enumerator = new NodeEnumerator(nodes);
         }
 
         /// <inheritdoc/>
-        public IEnumerator<Node<T>> GetEnumerator()
+        public IEnumerator<INode<T>> GetEnumerator()
         {
             while (this.enumerator.MoveNext())
             {
@@ -42,17 +42,17 @@ namespace BT
             return this.GetEnumerator();
         }
 
-        private class NodeEnumerator : IEnumerator<Node<T>>
+        private class NodeEnumerator : IEnumerator<INode<T>>
         {
-            private readonly Node<T>[] nodes;
+            private readonly INode<T>[] nodes;
             private int index = -1;
 
-            public NodeEnumerator(Node<T>[] nodes)
+            public NodeEnumerator(INode<T>[] nodes)
             {
                 this.nodes = nodes;
             }
 
-            public Node<T> Current => this.nodes[this.index];
+            public INode<T> Current => this.nodes[this.index];
 
             object IEnumerator.Current => this.Current;
 

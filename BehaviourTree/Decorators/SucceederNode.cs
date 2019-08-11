@@ -14,7 +14,7 @@ namespace BT.Decorators
         /// Initializes a new instance of the <see cref="SucceederNode{T}"/> class.
         /// </summary>
         /// <param name="child">The node to decorate.</param>
-        public SucceederNode(Node<T> child)
+        public SucceederNode(INode<T> child)
             : base(child)
         {
         }

@@ -16,7 +16,7 @@ namespace BT.Composites
         /// Initializes a new instance of the <see cref="SelectorNode{T}"/> class.
         /// </summary>
         /// <param name="children">The children nodes of the sequence.</param>
-        public SelectorNode(params Node<T>[] children)
+        public SelectorNode(params INode<T>[] children)
             : base(children)
         {
         }

@@ -51,12 +51,14 @@
     <Compile Include="Decorators\InverterNode.cs" />
     <Compile Include="Decorators\RepeaterNode.cs" />
     <Compile Include="Decorators\SucceederNode.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="INode.cs" />
     <Compile Include="Composites\CompositeNode.cs" />
     <Compile Include="Leafs\ActionNode.cs" />
     <Compile Include="Leafs\ConditionNode.cs" />
     <Compile Include="Leafs\LeafNode.cs" />
-    <Compile Include="NodeList.cs" />
+    <Compile Include="NodeList\NodeList.cs" />
+    <Compile Include="NodeList\NodeListFactory.cs" />
+    <Compile Include="NodeList\INodeList.cs" />
     <Compile Include="NodeStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

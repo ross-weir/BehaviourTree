@@ -16,7 +16,7 @@ namespace BT.Decorators
         /// Initializes a new instance of the <see cref="InverterNode{T}"/> class.
         /// </summary>
         /// <param name="child">The node to decorate.</param>
-        public InverterNode(Node<T> child)
+        public InverterNode(INode<T> child)
             : base(child)
         {
         }

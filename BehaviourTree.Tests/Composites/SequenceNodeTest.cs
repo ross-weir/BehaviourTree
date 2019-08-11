@@ -16,7 +16,7 @@ namespace BT.Tests.Composites
         public void Tick_AllChildrenSucceed_ReturnsSuccess()
         {
             var blackboard = this.GetBlackboard();
-            var children = new Node<TestBlackboard>[]
+            var children = new INode<TestBlackboard>[]
             {
                 new ActionNode<TestBlackboard>((TestBlackboard bb) =>
                 {
@@ -40,7 +40,7 @@ namespace BT.Tests.Composites
         public void Tick_ChildFails_ReturnsFailure()
         {
             var blackboard = this.GetBlackboard();
-            var children = new Node<TestBlackboard>[]
+            var children = new INode<TestBlackboard>[]
             {
                 new ActionNode<TestBlackboard>((TestBlackboard bb) =>
                 {
@@ -65,7 +65,7 @@ namespace BT.Tests.Composites
         {
             var blackboard = this.GetBlackboard();
             var mockAction = new Mock<ActionNode<TestBlackboard>>();
-            var children = new Node<TestBlackboard>[]
+            var children = new INode<TestBlackboard>[]
             {
                 new ActionNode<TestBlackboard>((TestBlackboard bb) =>
                 {
