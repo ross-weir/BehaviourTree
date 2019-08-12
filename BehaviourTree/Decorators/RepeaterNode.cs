@@ -14,7 +14,7 @@ namespace BT.Decorators
         /// Initializes a new instance of the <see cref="RepeaterNode{T}"/> class.
         /// </summary>
         /// <param name="child">The node to decorate.</param>
-        public RepeaterNode(Node<T> child)
+        public RepeaterNode(INode<T> child)
             : base(child)
         {
         }

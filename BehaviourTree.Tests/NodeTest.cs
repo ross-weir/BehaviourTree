@@ -9,9 +9,9 @@ namespace BT.Tests
     public class NodeTest<T>
         where T : TestBlackboard, new()
     {
-        protected virtual Node<T>[] GetNodes()
+        protected virtual INode<T>[] GetNodes()
         {
-            return new Node<T>[]
+            return new INode<T>[]
             {
                 new ActionNode<T>((T bb) =>
                 {

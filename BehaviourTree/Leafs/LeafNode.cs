@@ -11,7 +11,7 @@ namespace BT.Leafs
     /// </summary>
     /// <typeparam name="T">The generic blackboard.</typeparam>
     /// <typeparam name="TA"><see cref="ActionDelegate{T}"/> or <see cref="ConditionDelegate{T}"/>.</typeparam>
-    public abstract class LeafNode<T, TA> : Node<T>
+    public abstract class LeafNode<T, TA> : INode<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LeafNode{T, TA}"/> class.
@@ -33,5 +33,12 @@ namespace BT.Leafs
         /// Gets the action for the node to perform.
         /// </summary>
         protected TA Action { get; }
+
+        /// <summary>
+        /// Executes an actual action by calling the delegate.
+        /// </summary>
+        /// <param name="blackboard">A global blackboad used to store state.</param>
+        /// <returns><see cref="NodeStatus"/> depending on the concrete implementation.</returns>
+        public abstract NodeStatus Tick(T blackboard);
     }
 }
